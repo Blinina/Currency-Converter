@@ -2,7 +2,7 @@ import { React, useRef, useEffect, useState } from "react";
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
-import {getData} from './sliceCurrencies'
+import { getData } from './sliceCurrencies'
 
 export default function MainForm() {
     const dispatch = useDispatch();
@@ -13,11 +13,22 @@ export default function MainForm() {
         fromEl.current.focus();
         dispatch(getData())
     }, [])
-    const data = useSelector((state)=>state.currencies.currencies);
+    const data = useSelector((state) => state.currencies.currencies);
     const currencies = Object.entries(data);
-    const valueArr = currencies.flatMap(([a,b])=> [b.CharCode, b.Name]);
-    const objCurr = currencies.map(([a,b])=> b);
-    console.log('kek')
+    const valueArr = currencies.flatMap(([, b]) => [b.CharCode, b.Name]);
+    const objCurr = currencies.map(([, b]) => b);
+console.log(objCurr);
+    const findCurrency = (item) => {
+        objCurr.filter((el) => {
+            (el.Name.toLowerCase() === item.toLowerCase()) || (el.CharCode.toLowerCase() === item.toLowerCase())
+          
+            // if( el.CharCodetoLowerCase() === elem.toLowerCase()){
+            //     return el
+            // }
+        })
+    }
+
+
     const formik = useFormik({
         initialValues: { currencyFrom: 'lol', currencyTo: '', amount: 0 },
         validationSchema: yup.object().shape({
@@ -26,9 +37,12 @@ export default function MainForm() {
             amount: yup.number().required(),
         }),
         onSubmit: (values) => {
-            const {currencyFrom, currencyTo, amount} = values
-            const from = objCurr.filter((el)=>el.Name.toLowerCase()===currencyFrom.toLowerCase() || el.CharCodetoLowerCase()===currencyFrom.toLowerCase());
-            console.log(from)
+            const { currencyFrom, currencyTo, amount } = values
+            console.log(values);
+            const from = findCurrency(currencyFrom);
+            const to = findCurrency(currencyTo);
+            console.log(findCurrency(values.currencyFrom))
+            console.log(to)
         },
     });
     return (<div>
@@ -42,7 +56,7 @@ export default function MainForm() {
                     ref={fromEl}
                     value={formik.currencyFrom}
                     onChange={formik.handleChange}
-                    />
+                />
             </label>
             <label>
                 Валюта 2
@@ -52,23 +66,23 @@ export default function MainForm() {
                     placeholder="Введите название или код"
                     value={formik.currencyTo}
                     onChange={formik.handleChange}
-                    />
+                />
             </label>
             <label>
                 Количество
                 <input
-                type="number"
+                    type="number"
                     placeholder="Введите число"
                     name="amount"
-                    value={formik.amount} 
+                    value={formik.amount}
                     onChange={formik.handleChange}
-                    />
+                />
             </label>
             <button onClick={formik.handleSubmit} type="submit">kkkk</button>
         </form>
-        <div><p>Итого:  {result===0 ? '...' : result}</p></div>
+        <div><p>Итого:  {result === 0 ? '...' : result}</p></div>
 
-       
+
 
     </div>
     )

@@ -29,3 +29,25 @@
     display: flex;
     flex-wrap: wrap;
 }
+nav{
+    font-size: 12px;
+    line-height: 14.06px;
+    font-weight: 500;
+    background-color: var(--main);
+
+    ul{
+        display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    }
+   
+    li{
+        list-style-type: none;
+    }
+    a{
+      text-decoration: none;
+    }
+}

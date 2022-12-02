@@ -30,4 +30,25 @@
   flex-wrap: wrap;
 }
 
+nav {
+  font-size: 12px;
+  line-height: 14.06px;
+  font-weight: 500;
+  background-color: var(--main);
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  list-style-type: none;
+}
+nav a {
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=index.css.map */

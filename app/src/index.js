@@ -11,3 +11,9 @@ root.render(
     <App />
     </Provider>
 );
+// "eslintConfig": {
+//     "extends": [
+//       "react-app",
+//       "react-app/jest"
+//     ]
+//   },
