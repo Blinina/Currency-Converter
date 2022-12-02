@@ -1,0 +1,33 @@
+:root {
+  --main: #F8F8F8;
+  --blue: #0F4471;
+  --red: #E02025;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background-color: var(--main);
+  border-radius: 16px;
+}
+
+.char {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=index.css.map */
