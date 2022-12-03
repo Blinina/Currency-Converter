@@ -1,0 +1,26 @@
+@media  screen and (max-width: 500px)  {
+    // h2 {
+    //     font-size: 20px;
+    //     line-height: 28px;
+    //    }
+       //форма
+       .form{
+        gap: 41px;
+    }
+   
+
+    input{
+        height: 46px;
+        margin-top: 14px;
+
+    }
+    //список + изображение
+    .container {
+        flex-wrap: wrap;
+     
+     }
+     // изображение
+    .images {
+        display: inline;
+    }
+}

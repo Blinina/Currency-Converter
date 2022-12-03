@@ -16,11 +16,19 @@ export default function MainForm() {
     const data = useSelector((state) => state.currencies.currencies);
     const currencies = Object.entries(data);
     const valueArr = currencies.flatMap(([, b]) => [b.CharCode, b.Name]);
-    const objCurr = currencies.map(([, b]) => b);
-
-    const findCurrency = (item) => {
+    const objRUB = {
+        "ID": "хзвообще",
+        "NumCode": "643",
+        "CharCode": "RUB",
+        "Nominal": 1,
+        "Name": "Российский рубль",
+        "Value": 1,
+        "Previous": 1
+};
+    const objCurr = [objRUB, ...currencies.map(([, b]) => b)];
+    const findCurrency = (cur) => {
        return objCurr.find((el) => 
-            (el.Name.toLowerCase() === item.toLowerCase()) || (el.CharCode.toLowerCase() === item.toLowerCase())
+            (el.Name.toLowerCase() === cur.toLowerCase().trim()) || (el.CharCode.toLowerCase() === cur.toLowerCase().trim())
         );
         
     }
@@ -35,11 +43,18 @@ export default function MainForm() {
         }),
         onSubmit: (values) => {
             const { currencyFrom, currencyTo, amount } = values;
-            console.log(values);
             const from = findCurrency(currencyFrom);
             const to = findCurrency(currencyTo);
-            console.log( findCurrency(values.currencyFrom))
-            console.log(to)
+        
+            let res = (amount*from.Value/from.Nominal) / (to.Value/to.Nominal);
+            if(res < 0.1) {
+                res = res.toFixed(4);
+            }else{
+                res = res.toFixed(2);
+            }
+            console.log('поменялось')
+
+            setResult(res);
         },
     });
     return (<div>
@@ -75,12 +90,9 @@ export default function MainForm() {
                     onChange={formik.handleChange}
                 />
             </label>
-            <button onClick={formik.handleSubmit} type="submit">kkkk</button>
+            <button  className="hidden" onClick={formik.handleSubmit} type="submit">kkkk</button>
         </form>
         <div><p>Итого:  {result === 0 ? '...' : result}</p></div>
-
-
-
     </div>
     )
 }

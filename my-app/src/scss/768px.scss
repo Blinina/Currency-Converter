@@ -1,0 +1,29 @@
+@media  screen and (min-width: 500px) and (max-width: 768px)  {
+    // h2 {
+    //     font-size: 26px;
+    //    }
+   // форма
+
+       .form{
+        gap: 51px;
+    }
+
+    input{
+        height: 46px;
+        margin-top: 14px;
+
+    }
+         // список+ изображение
+
+    .img-ul{
+
+        flex-direction: column!important;
+    
+    }
+         // изображение
+
+    .images {
+        display: flex;
+        flex-direction: column;
+    }
+}
