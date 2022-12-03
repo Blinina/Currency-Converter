@@ -17,15 +17,12 @@ export default function MainForm() {
     const currencies = Object.entries(data);
     const valueArr = currencies.flatMap(([, b]) => [b.CharCode, b.Name]);
     const objCurr = currencies.map(([, b]) => b);
-console.log(objCurr);
+
     const findCurrency = (item) => {
-        objCurr.filter((el) => {
+       return objCurr.find((el) => 
             (el.Name.toLowerCase() === item.toLowerCase()) || (el.CharCode.toLowerCase() === item.toLowerCase())
-          
-            // if( el.CharCodetoLowerCase() === elem.toLowerCase()){
-            //     return el
-            // }
-        })
+        );
+        
     }
 
 
@@ -37,11 +34,11 @@ console.log(objCurr);
             amount: yup.number().required(),
         }),
         onSubmit: (values) => {
-            const { currencyFrom, currencyTo, amount } = values
+            const { currencyFrom, currencyTo, amount } = values;
             console.log(values);
             const from = findCurrency(currencyFrom);
             const to = findCurrency(currencyTo);
-            console.log(findCurrency(values.currencyFrom))
+            console.log( findCurrency(values.currencyFrom))
             console.log(to)
         },
     });
