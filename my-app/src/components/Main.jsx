@@ -27,11 +27,11 @@ export default function Main() {
                             <li>Incididunt ut labore</li>
                         </ul>
                         <div className="images">
-                            <div>
+                            <div className="img-con">
                                 <img className="img1" src={img1} alt="img1" />
                                 <img className="img2" src={img2} alt="img2" />
                             </div>
-                            <div>
+                            <div className="img-con">
                                 <img className="img3" src={img3} alt="img3" />
                                 <img className="img4" src={img4} alt="img4" />
                             </div>
