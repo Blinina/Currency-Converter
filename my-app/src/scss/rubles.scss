@@ -4,11 +4,6 @@
     background-color: var(--main);
     display: flex;
     align-items: center;
-
-
-    font-size: 12px;
-    line-height: 14.06px;
-    font-weight: 500;
     background-color: var(--main);
 
     ul {
@@ -22,10 +17,14 @@
 
     li {
         list-style-type: none;
+        
     }
 
     a {
         text-decoration: none;
+        font-size: 12px;
+        line-height: 14.06px;
+        font-weight: 500;
     }
 
 }
@@ -221,12 +220,13 @@
 
 @media screen and (min-width: 769px) and (max-width: 1280px) {
     .rubles {
-        .title{
+        .title {
             margin: 36px 5% 40px;
         }
+
         img {
             width: 52px;
-            
+
         }
 
         .footer {
@@ -236,10 +236,11 @@
             gap: 20px;
 
         }
-        .cards{
- flex-wrap: nowrap;
- margin: 0px 4.2%;
- gap: 30px;
+
+        .cards {
+            flex-wrap: nowrap;
+            margin: 0px 4.2%;
+            gap: 30px;
         }
 
         .card {
@@ -264,16 +265,17 @@
     }
 
     .rubles {
-        .title{
+        .title {
             font-size: 36px;
             margin: 30px 5% 40px;
         }
+
         .footer {
             margin: 30px 5% 92px 5%;
-            gap: 30px ;
+            gap: 30px;
             padding: 2.5% 31px 2.8%;
         }
-        
+
 
         img {
             width: 4.4vw;

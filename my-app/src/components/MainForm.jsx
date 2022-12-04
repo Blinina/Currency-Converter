@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { getData } from './sliceCurrencies'
-
+import infoRed from "../assets/images/info-red.png";
 export default function MainForm() {
     const dispatch = useDispatch();
     const fromEl = useRef();
@@ -57,7 +57,7 @@ export default function MainForm() {
             setResult(res);
         },
     });
-    return (<div>
+    return (<div className="item">
         <form onSubmit={formik.handleSubmit} className="form">
             <label>
                 Валюта 1
@@ -92,7 +92,10 @@ export default function MainForm() {
             </label>
             <button  className="hidden" onClick={formik.handleSubmit} type="submit">kkkk</button>
         </form>
-        <div><p>Итого:  {result === 0 ? '...' : result}</p></div>
+        <div className="result">
+            <img src={infoRed} alt="info" className="info-red"/>
+            <p>Итого:  {result === 0 ? '...' : result}</p>
+            </div>
     </div>
     )
 }

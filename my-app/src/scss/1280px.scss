@@ -1,19 +1,146 @@
-@media  screen and (min-width: 768px) and (max-width: 1280px) {
-//    h2 {
-//     font-size: 26px;
-//     line-height: 30.47px;
-//    }
-     // форма
+@media screen and (min-width: 1050px) and (max-width: 1281px) {
+    .title {
+        margin: 30px 4% 0;
+        font-size: 26px;
+        line-height: 30px;
 
-   .form{
-    gap: 53px;
-}
-label{
-    margin-bottom: 15px;
-}
-input{
-    height: 50px;
-    margin-top: 15px;
+    }
 
+    h2 {
+        font-size: 15px;
+        line-height: 18px;
+        margin-bottom: 39px;
+    }
+
+    .img-ul-main {
+        box-sizing: border-box;
+        padding: 32.82px 25px 33.54px;
+        max-height: 375.97px;
+
+    }
+
+    .img-ul {
+        gap: 30px;
+        align-items: flex-start;
+
+
+        li {
+            font-size: 14px;
+            line-height: 18px;
+            max-height: 8px;
+
+            &:first-child {
+                max-height: 26.19px !important;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 25.04px;
+
+            }
+
+            &::before {
+
+                height: 8px;
+                width: 8px;
+            }
+        }
+    }
+
+    .images {
+        gap: 4%;
+    }
+
+    img {
+        width: 48%;
+        max-width: 116.51px;
+        // gap: 3%;
+    }
+
+    .img2 {
+        border-top-right-radius: 40%;
+        margin-left: 4%;
+    }
+
+    .img3 {
+        border-bottom-left-radius: 40%;
+        margin-right: 4%;
+    }
+
+    .result {
+        margin-top: 20px;
+        gap: 38px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 140%;
+        padding: 28px 0 34px 31px;
+
+        img {
+            width: 45px;
+            height: 45.16px;
+        }
+
+        p {
+            max-height: 28px;
+            margin: 0;
+        }
+    }
+
+    label {
+        font-size: 14px;
+
+    }
+
+    input {
+        margin-top: 15.09px;
+
+    }
+
+    .phone {
+        font-size: 40px;
+        line-height: 46px;
+    }
+
+    .email {
+        font-size: 24px;
+        line-height: 28px;
+
+    }
+
+    .or {
+        font-size: 18px;
+        line-height: 21px;
+        text-transform: uppercase;
+        color: #404456;
+    }
+
+    .footer-text {
+        padding: 65px 0 64px 51px;
+
+        p {
+            font-size: 13px;
+            line-height: 138%;
+            max-width: 467.55px;
+            max-height: 33.04px;
+            color: #404456;
+            padding-top: 25px;
+
+        }
+
+        h3 {
+            font-size: 29px;
+            line-height: 36px;
+        }
+    }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1050px) {
+    .title {
+        margin: 30px 4% 0;
+        font-size: 26px;
+        line-height: 30px;
+
+    }
+
+    .images {}
+
 }

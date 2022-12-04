@@ -4,23 +4,85 @@
     //     line-height: 28px;
     //    }
        //форма
-       .form{
-        gap: 41px;
-    }
+     
    
 
+    //список + изображение
+    .container {
+        flex-wrap: wrap;
+        margin: 14px 15px 0;
+        flex-direction: column;
+     
+     }
+     .main-footer, .img-ul{
+        flex-direction: column!important;
+     }
+     .item{
+        width: 100%!important;
+     }
+     // изображение
+    .images {
+        display: inline;
+
+        
+    }
+    img{
+        width: 20%;
+    }
+    .img-1, .img-3{
+        border-radius: 0px 15px;
+    }
+    .img-2, .img-4{
+        border-radius: 0px 15px;
+
+    }
+
+    .img-ul {
+        gap: 30px;
+        align-items: flex-start;
+
+
+        li {
+            font-size: 14px;
+            line-height: 18px;
+            max-height: 8px;
+
+            &:first-child {
+                max-height: 26.19px !important;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 25.04px;
+
+            }
+
+            &::before {
+
+                height: 8px;
+                width: 8px;
+            }
+        }
+    }
+        
+    
+
+}
+
+
+
+@media  screen and (max-width: 768px)  {
+    .title{
+        margin: 20px 15px 0;
+        font-size: 20px;
+        line-height: 140%;
+
+    }
     input{
         height: 46px;
         margin-top: 14px;
 
     }
-    //список + изображение
-    .container {
-        flex-wrap: wrap;
-     
-     }
-     // изображение
-    .images {
-        display: inline;
+    .form{
+        gap: 21px;
     }
 }
