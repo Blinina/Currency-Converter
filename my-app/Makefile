@@ -1,6 +1,6 @@
 
 sass: 
-	sass src/scss/main.scss src/index.css
+	sass src/scss/main.scss src/css/index.css
 babel:
 	babel lib/ -d src/
 

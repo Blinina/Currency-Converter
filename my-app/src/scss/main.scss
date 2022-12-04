@@ -4,6 +4,10 @@
 @import "1600px"; 
 @import "rubles"; 
 
+@font-face {
+    font-family: Roboto;
+    src: url(../assets/fonts/Roboto-Regular.ttf);
+};
 
 
 :root {
@@ -11,6 +15,10 @@
     --blue: #0F4471;
     --red: #E02025;
     --gray-light: #DFDFDF;
+}
+body{
+    font-family: Roboto;
+    margin: 0px;
 }
 h1{
     font-size: 3vh;
@@ -22,45 +30,8 @@ h2{
     margin: 3vw 15px 3vw;
    
    }
-nav {
-    font-size: 12px;
-    line-height: 14.06px;
-    font-weight: 500;
-    background-color: var(--main);
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 30px;
-        margin: 0;
-        padding: 0;
-    }
 
-    li {
-        list-style-type: none;
-    }
-
-    a {
-        text-decoration: none;
-    }
-}
-
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.card {
-    background-color: var(--main);
-    border-radius: 16px;
-}
-
-.char {
-    color: var(--blue);
-    font-weight: 700;
-}
 
 .form {
     display: flex;
