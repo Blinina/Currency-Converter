@@ -1,5 +1,5 @@
 import { React, useRef, useEffect, useState } from "react";
-import { useFormik } from 'formik';
+import { useFormik, validateYupSchema } from 'formik';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { getData } from './sliceCurrencies'
@@ -8,7 +8,8 @@ export default function MainForm() {
     const dispatch = useDispatch();
     const fromEl = useRef();
     const [result, setResult] = useState(0);
-
+    const [valid, isValid] = useState(true);
+    const [errMess, setErrMess] = useState('')
     useEffect(() => {
         fromEl.current.focus();
         dispatch(getData())
@@ -24,38 +25,43 @@ export default function MainForm() {
         "Name": "Российский рубль",
         "Value": 1,
         "Previous": 1
-};
+    };
     const objCurr = [objRUB, ...currencies.map(([, b]) => b)];
     const findCurrency = (cur) => {
-       return objCurr.find((el) => 
+        return objCurr.find((el) =>
             (el.Name.toLowerCase() === cur.toLowerCase().trim()) || (el.CharCode.toLowerCase() === cur.toLowerCase().trim())
         );
-        
-    }
 
+    }
+    const validate = yup.object({
+        currencyFrom: yup.string().required('Поле должно быть заполнено'),
+        currencyTo: yup.string().required('Поле должно быть заполнено'),
+        amount: yup.number().required('Поле должно быть заполнено'),
+    });
 
     const formik = useFormik({
-        initialValues: { currencyFrom: 'lol', currencyTo: '', amount: 0 },
-        validationSchema: yup.object().shape({
-            currencyFrom: yup.string().required(),
-            currencyTo: yup.string().required(),
-            amount: yup.number().required(),
-        }),
-        onSubmit: (values) => {
-            const { currencyFrom, currencyTo, amount } = values;
-            const from = findCurrency(currencyFrom);
-            const to = findCurrency(currencyTo);
-        
-            let res = (amount*from.Value/from.Nominal) / (to.Value/to.Nominal);
-            if(res < 0.1) {
-                res = res.toFixed(4);
-            }else{
-                res = res.toFixed(2);
-            }
-            console.log('поменялось')
+        initialValues: { currencyFrom: '', currencyTo: '', amount: 0 },
 
-            setResult(res);
+        onSubmit: async  (values) => {
+            try {
+                await validate.validate(values);
+                const { currencyFrom, currencyTo, amount } = values;
+                const from = findCurrency(currencyFrom);
+                const to = findCurrency(currencyTo);
+                let res = (amount * from.Value / from.Nominal) / (to.Value / to.Nominal);
+                if (res < 0.1) {
+                    res = res.toFixed(4);
+                } else {
+                    res = res.toFixed(2);
+                }
+                setResult(res);
+            
+        }catch (err) {
+           console.log(err)
+           setErrMess(err.message)
+          }
         },
+
     });
     return (<div className="item">
         <form onSubmit={formik.handleSubmit} className="form">
@@ -68,7 +74,9 @@ export default function MainForm() {
                     ref={fromEl}
                     value={formik.currencyFrom}
                     onChange={formik.handleChange}
+                    className={errMess && 'invalid'}
                 />
+                {errMess && <p className="danger">{errMess}</p>}
             </label>
             <label>
                 Валюта 2
@@ -87,15 +95,15 @@ export default function MainForm() {
                     placeholder="Введите число"
                     name="amount"
                     value={formik.amount}
-                    onChange={formik.handleChange}
+                    onChange={()=>formik.handleChange}
                 />
             </label>
-            <button  className="hidden" onClick={formik.handleSubmit} type="submit">kkkk</button>
+            <button className="hidden" onClick={formik.handleSubmit} type="submit">kkkk</button>
         </form>
         <div className="result">
-            <img src={infoRed} alt="info" className="info-red"/>
+            <img src={infoRed} alt="info" className="info-red" />
             <p>Итого:  {result === 0 ? '...' : result}</p>
-            </div>
+        </div>
     </div>
     )
 }

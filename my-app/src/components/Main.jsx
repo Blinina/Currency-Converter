@@ -42,13 +42,13 @@ export default function Main() {
             <div className="main-footer">
                 <div className="footer-text">
                     <h3>Нужна помощь?</h3>
-                    <h3>   Мы поможем! Просто свяжитесь с нами.</h3>
+                    <h3>Мы поможем! Просто свяжитесь с нами.</h3>
                     <p>Наши специалисты с радостью ответят на все ваши вопросы и дадут профессиональную консультацию по товарам.</p>
                 </div>
                 <div className="contacts">
-                    <p className="phone">8 (800) 888-90-28</p>
+                    <p className="phone"> <a href="tel:+78008889028">8 (800) 888-90-28</a></p>
                     <p className="or">или</p>
-                    <p className="email">info@example.ru</p>
+                    <p className="email"><a href="mailto:info@example.ru">info@example.ru</a></p>
                 </div>
             </div>
         </div>

@@ -133,25 +133,42 @@
     }
 }
 
-@media screen and (min-width: 500px) and (max-width: 1050px) {
+@media screen and (min-width: 767px) and (max-width: 1050px) {
     .title {
         margin: 30px 4% 0;
         font-size: 26px;
         line-height: 30px;
 
     }
-    h2{
+    .container {
+        display: flex;
+        gap: 27px;
+        margin: 20px 30px 0;
+        min-width: 344px;
+    }
+
+    h2 {
         font-size: 13px;
         line-height: 18px;
         margin-bottom: 25px;
+        margin-top: 0px;
     }
-    .img-con{
-        display: flex;
-        flex-direction: column;
+    .img-ul-main {
+        box-sizing: border-box;
+        padding: 22.08px 15px 20px;
+        max-height: 354px;
 
     }
+
+    .img-con {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5%;
+
+    }
+
     .img-ul {
-        gap: 30px;
+        gap: 7%;
         align-items: flex-start;
 
 
@@ -159,7 +176,7 @@
             font-size: 13px;
             line-height: 15px;
             max-height: 8.1px;
-
+            max-width: 187.91px;
             &:first-child {
                 max-height: 26.19px !important;
             }
@@ -176,14 +193,30 @@
             }
         }
     }
-    .images{
+
+    .images {
         width: 30%;
     }
+
     img {
-        width: 100%;
-        max-width: 100px;
+        width: 95%;
+        max-width: 116px;
+        max-height: 58px!important;
+        &:not(:last-child) {
+            margin-bottom: 5%;
+        }
     }
 
+    .img1,
+    .img3 {
+        border-radius: 15px 0px;
+    }
+
+    .img2,
+    .img4 {
+        border-radius: 0px 15px;
+
+    }
 
 
     .phone {
@@ -200,7 +233,7 @@
     .or {
         font-size: 12px;
         line-height: 14px;
-     
+
     }
 
     .footer-text {
@@ -220,14 +253,16 @@
             line-height: 24px;
         }
     }
+
     .result {
+        box-sizing: border-box ;
         margin-top: 20px;
         gap: 38px;
         font-weight: 700;
         font-size: 16px;
         line-height: 140%;
-        padding: 40px 27px;
-
+        padding: 35px 27px;
+        max-height: 108px!important;
         img {
             width: 40px;
             height: 39px;
