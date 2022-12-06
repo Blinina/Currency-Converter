@@ -1,22 +1,22 @@
 import { React, useRef, useEffect, useState } from "react";
-import { useFormik, validateYupSchema } from 'formik';
+import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { getData } from './sliceCurrencies'
 import infoRed from "../assets/images/info-red.png";
+import Form from 'react-bootstrap/Form';
+
 export default function MainForm() {
     const dispatch = useDispatch();
     const fromEl = useRef();
     const [result, setResult] = useState(0);
-    const [valid, isValid] = useState(true);
-    const [errMess, setErrMess] = useState('')
+
     useEffect(() => {
         fromEl.current.focus();
         dispatch(getData())
     }, [])
     const data = useSelector((state) => state.currencies.currencies);
     const currencies = Object.entries(data);
-    const valueArr = currencies.flatMap(([, b]) => [b.CharCode, b.Name]);
     const objRUB = {
         "ID": "хзвообще",
         "NumCode": "643",
@@ -33,70 +33,85 @@ export default function MainForm() {
         );
 
     }
-    const validate = yup.object({
-        currencyFrom: yup.string().required('Поле должно быть заполнено'),
-        currencyTo: yup.string().required('Поле должно быть заполнено'),
-        amount: yup.number().required('Поле должно быть заполнено'),
-    });
+    const valueArr = currencies.flatMap(([, b]) => [b.CharCode, b.Name]);
+
+    valueArr.push("Российский рубль", "RUB");
+    const LowerValidArr = valueArr.map((el) => el.toLowerCase());
+    const UpperValidArr = valueArr.map((el) => el.toUpperCase());
+    const validArr = [...LowerValidArr, ...UpperValidArr, valueArr];
 
     const formik = useFormik({
         initialValues: { currencyFrom: '', currencyTo: '', amount: 0 },
-
-        onSubmit: async  (values) => {
-            try {
-                await validate.validate(values);
-                const { currencyFrom, currencyTo, amount } = values;
-                const from = findCurrency(currencyFrom);
-                const to = findCurrency(currencyTo);
-                let res = (amount * from.Value / from.Nominal) / (to.Value / to.Nominal);
-                if (res < 0.1) {
-                    res = res.toFixed(4);
-                } else {
-                    res = res.toFixed(2);
-                }
-                setResult(res);
-            
-        }catch (err) {
-           console.log(err)
-           setErrMess(err.message)
-          }
+        validationSchema: yup.object({
+            currencyFrom: yup.string()
+                .required('Поле должно быть заполнено')
+                .oneOf(validArr, 'Такого значения валюты нет'),
+            currencyTo: yup.string()
+                .required('Поле должно быть заполнено')
+                .oneOf(validArr, 'Такого значения валюты нет'),
+            amount: yup.number()
+                .required('Поле должно быть заполнено')
+                .positive('Не может быть отрицательным')
+                .integer(),
+        }),
+        onSubmit: (values) => {
+            const { currencyFrom, currencyTo, amount } = values;
+            const from = findCurrency(currencyFrom);
+            const to = findCurrency(currencyTo);
+            let res = (amount * from.Value / from.Nominal) / (to.Value / to.Nominal);
+            if (res < 0.1) {
+                res = res.toFixed(4);
+            } else {
+                res = res.toFixed(2);
+            }
+            setResult(res);
         },
 
     });
     return (<div className="item">
         <form onSubmit={formik.handleSubmit} className="form">
-            <label>
+            <label htmlFor="currencyFrom">
                 Валюта 1
-                <input type="text"
+                <Form.Control type="text"
                     name="currencyFrom"
                     id="currencyFrom"
                     placeholder="Введите название или код"
                     ref={fromEl}
                     value={formik.currencyFrom}
                     onChange={formik.handleChange}
-                    className={errMess && 'invalid'}
+                    // onBlur={formik.handleBlur}
+                    isInvalid={formik.errors.currencyFrom}
+                    className={formik.errors.currencyFrom && 'invalid'}
                 />
-                {errMess && <p className="danger">{errMess}</p>}
+                {formik.errors.currencyFrom && <p className="danger">{formik.errors.currencyFrom}</p>}
             </label>
             <label>
                 Валюта 2
-                <input type="text"
+                <Form.Control type="text"
                     name="currencyTo"
                     id="currencyTo"
                     placeholder="Введите название или код"
                     value={formik.currencyTo}
                     onChange={formik.handleChange}
+                    isInvalid={formik.errors.currencyTo}
+                    className={formik.errors.currencyTo && 'invalid'}
                 />
+                {formik.errors.currencyTo && <p className="danger">{formik.errors.currencyTo}</p>}
+
             </label>
             <label>
                 Количество
-                <input
+                <Form.Control
                     type="number"
                     placeholder="Введите число"
                     name="amount"
                     value={formik.amount}
-                    onChange={()=>formik.handleChange}
+                    onChange={formik.handleChange}
+                    isInvalid={formik.errors.amount}
+                    className={formik.errors.amount && 'invalid'}
                 />
+                <p className="danger">{formik.errors.amount}</p>
+
             </label>
             <button className="hidden" onClick={formik.handleSubmit} type="submit">kkkk</button>
         </form>

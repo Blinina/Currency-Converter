@@ -7,6 +7,7 @@ import {
 import Main from "./components/Main";
 import Nav from "./components/Nav";
 import Ruble from "./components/Ruble";
+
 function App() {
   return (
     <>

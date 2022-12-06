@@ -6,13 +6,17 @@
         line-height: 140%;
     }
 
+    input {
+        height: 46px;
+        margin-top: 14px;
+    }
+
     //список + изображение
     .container {
         flex-wrap: wrap;
         margin: 14px 15px 0;
         flex-direction: column;
         gap: 0px !important;
-
     }
 
     .main-footer,
@@ -47,8 +51,6 @@
 
     .images {
         flex-direction: row !important;
-
-
     }
 
     img {
@@ -107,8 +109,8 @@
 
             &::before {
 
-                height: 8px;
-                width: 8px;
+                height: 11px!important;
+                width: 10px!important;
             }
         }
     }
@@ -142,7 +144,6 @@
 
             color: #404456;
             padding-top: 20px;
-
         }
 
         h3 {
@@ -154,7 +155,6 @@
     .contacts {
         text-align: center;
         margin-top: 30px;
-
     }
 
 
@@ -166,7 +166,6 @@
     input {
         height: 46px;
         margin-top: 14px;
-
     }
 
     .form {
