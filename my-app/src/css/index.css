@@ -506,6 +506,7 @@
   font-size: 12px;
   line-height: 14.06px;
   font-weight: 500;
+  color: var(--blue);
 }
 .nav a:active {
   color: var(--blue);

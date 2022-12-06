@@ -17,7 +17,7 @@
 
     li {
         list-style-type: none;
-        
+
     }
 
     a {
@@ -25,6 +25,8 @@
         font-size: 12px;
         line-height: 14.06px;
         font-weight: 500;
+        color: var(--blue);
+
         &:active {
             color: var(--blue);
         }
@@ -39,10 +41,12 @@
         line-height: 140%;
         font-size: 26px;
     }
+
     a {
         text-decoration: none;
         color: var(--blue);
     }
+
     .footer {
         box-sizing: border-box;
         font-weight: 700;
@@ -76,7 +80,8 @@
         padding-left: 24.13px;
         padding-top: 38.92px;
         cursor: pointer;
-        &:hover{
+
+        &:hover {
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
 

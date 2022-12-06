@@ -15,6 +15,7 @@ export default function MainForm() {
         fromEl.current.focus();
         dispatch(getData())
     }, [])
+
     const data = useSelector((state) => state.currencies.currencies);
     const currencies = Object.entries(data);
     const objRUB = {
@@ -31,10 +32,9 @@ export default function MainForm() {
         return objCurr.find((el) =>
             (el.Name.toLowerCase() === cur.toLowerCase().trim()) || (el.CharCode.toLowerCase() === cur.toLowerCase().trim())
         );
-
-    }
+    };
+    
     const valueArr = currencies.flatMap(([, b]) => [b.CharCode, b.Name]);
-
     valueArr.push("Российский рубль", "RUB");
     const LowerValidArr = valueArr.map((el) => el.toLowerCase());
     const UpperValidArr = valueArr.map((el) => el.toUpperCase());

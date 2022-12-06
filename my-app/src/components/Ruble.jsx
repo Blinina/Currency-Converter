@@ -27,16 +27,21 @@ export default function Ruble() {
                     <div className="card-body">
                         <p className="name">{b.Name}</p>
                         <ul>
-                        <li className="nominal">Номинал: {b.Nominal}</li>
-                        <li className="value">Курс: {b.Value}</li>
+                            <li className="nominal">Номинал: {b.Nominal}</li>
+                            <li className="value">Курс: {b.Value}</li>
                         </ul>
                     </div>
                 </div>
                 )}
             </div>
             <div className="footer">
-                <img src={info} alt="инфо-лого" className="info"/>
-                <div className="text"><p>Телефон: <a href="tel:+78008889028">8 (800) 888-90-28</a>, email: <a href="mailto:info@example.ru">info@example.ru</a></p></div>
+                <img src={info} alt="инфо-лого" className="info" />
+                <div className="text">
+                    <p>
+                        Телефон: <a href="tel:+78008889028">8 (800) 888-90-28</a>,
+                        email: <a href="mailto:info@example.ru">info@example.ru</a>
+                    </p>
+                </div>
             </div>
         </div>
     )

@@ -16,7 +16,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/ruble" element={<Ruble />}/>
+            <Route path="/ruble" element={<Ruble />} />
           </Routes>
         </main>
       </BrowserRouter>
