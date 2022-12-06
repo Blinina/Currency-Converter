@@ -5,3 +5,7 @@
 [**APP**](https://converter-sand.vercel.app/)
 
 Stack: React, SCSS, yup, formik;
+ [**API**](https://www.cbr-xml-daily.ru/daily_json.js)
+
+Я выполнела задание на React без фраемворков, добавила валидацию формы и RUB-валюту.
+
