@@ -1,174 +1,157 @@
 @media screen and (max-width: 767px) {
+	.title {
+		margin: 0 15px;
+		font-size: 20px;
+		line-height: 140%;
+	}
 
-    .title {
-        margin: 0 15px;
-        font-size: 20px;
-        line-height: 140%;
-    }
+	input {
+		height: 46px;
+		margin-top: 14px;
+	}
 
-    input {
-        height: 46px;
-        margin-top: 14px;
-    }
+	.container {
+		flex-flow: column;
+		flex-wrap: wrap;
+		margin: 14px 15px 0;
+		gap: 0 !important;
+	}
 
-    //список + изображение
-    .container {
-        flex-wrap: wrap;
-        margin: 14px 15px 0;
-        flex-direction: column;
-        gap: 0px !important;
-    }
+	.main-footer,
+	.img-ul {
+		flex-direction: column !important;
+	}
 
-    .main-footer,
-    .img-ul {
-        flex-direction: column !important;
-    }
+	.item {
+		width: 100% !important;
+	}
 
-    .item {
-        width: 100% !important;
-    }
+	.result {
+		gap: 19px;
+		padding: 28px 26px 20px;
+		margin-top: 19px;
+		margin-bottom: 17px;
 
-    .result {
-        gap: 19px;
-        padding: 28px 26px 20px;
-        margin-top: 19px;
-        margin-bottom: 17px;
+		img {
+			width: 42px;
+			height: 42px;
+		}
 
-        img {
-            width: 42px;
-            height: 42px;
-        }
+		p {
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 140%;
+			margin: 0;
+		}
+	}
 
-        p {
-            font-weight: 700;
-            font-size: 14px;
-            line-height: 140%;
-            margin: 0;
-        }
-    }
+	// изображение
 
-    // изображение
+	.images {
+		flex-direction: row !important;
+	}
 
-    .images {
-        flex-direction: row !important;
-    }
+	.img1,
+	.img3 {
+		border-radius: 15px 0;
+	}
 
-    img {
-        width: 48%;
+	.img2,
+	.img4 {
+		border-radius: 0 15px;
+	}
 
-        &:not(:last-child) {
-            margin-right: 2%;
-        }
+	h2 {
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 138%;
+	}
 
-    }
+	.img-ul-main {
+		box-sizing: border-box;
+		padding: 5%;
+		min-height: 375.97px;
+	}
 
-    .img1,
-    .img3 {
-        border-radius: 15px 0px;
-    }
+	.img-ul {
+		gap: 30px;
+		align-items: flex-start;
 
-    .img2,
-    .img4 {
-        border-radius: 0px 15px;
+		img {
+			width: 48%;
 
-    }
+			&:not(:last-child) {
+				margin-right: 2%;
+			}
+		}
 
-    h2 {
-        font-weight: 500;
-        font-size: 13px;
-        line-height: 138%;
+		li {
+			font-size: 14px;
+			line-height: 18px;
+			max-height: 8px;
 
+			&:first-child {
+				max-height: 12px !important;
+			}
 
-    }
+			&:not(:last-child) {
+				margin-bottom: 25.04px;
+			}
 
-    .img-ul-main {
-        box-sizing: border-box;
-        padding: 5%;
-        min-height: 375.97px;
+			&::before {
 
-    }
+				height: 11px !important;
+				width: 10px !important;
+			}
+		}
+	}
 
-    .img-ul {
-        gap: 30px;
-        align-items: flex-start;
+	.phone {
+		font-size: 26px;
+		line-height: 30px;
+	}
 
+	.email {
+		font-size: 18px;
+		line-height: 21px;
+	}
 
-        li {
-            font-size: 14px;
-            line-height: 18px;
-            max-height: 8px;
+	.or {
+		font-size: 12px;
+		line-height: 14px;
+	}
 
-            &:first-child {
-                max-height: 26.19px !important;
-            }
+	.footer-text {
+		padding: 5% 5% 0;
+		text-align: center;
 
-            &:not(:last-child) {
-                margin-bottom: 25.04px;
+		p {
+			font-size: 12px;
+			line-height: 14px;
 
-            }
+			color: #404456;
+			padding-top: 20px;
+		}
 
-            &::before {
+		h3 {
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
 
-                height: 11px!important;
-                width: 10px!important;
-            }
-        }
-    }
-
-    .phone {
-        font-size: 26px;
-        line-height: 30px;
-
-    }
-
-    .email {
-        font-size: 18px;
-        line-height: 21px;
-
-    }
-
-    .or {
-        font-size: 12px;
-        line-height: 14px;
-
-    }
-
-    .footer-text {
-        padding: 5% 5% 0 5%;
-        text-align: center;
-
-
-        p {
-            font-size: 12px;
-            line-height: 14px;
-
-            color: #404456;
-            padding-top: 20px;
-        }
-
-        h3 {
-            font-size: 16px;
-            line-height: 24px;
-        }
-    }
-
-    .contacts {
-        text-align: center;
-        margin-top: 30px;
-    }
-
-
+	.contacts {
+		text-align: center;
+		margin-top: 30px;
+	}
 }
 
-
-
 @media screen and (max-width: 768px) {
-    input {
-        height: 46px;
-        margin-top: 14px;
-    }
+	input {
+		height: 46px;
+		margin-top: 14px;
+	}
 
-    .form {
-        gap: 21px;
-    }
+	.form {
+		gap: 21px;
+	}
 }

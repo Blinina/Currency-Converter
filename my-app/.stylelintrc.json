@@ -1,0 +1,20 @@
+{
+    "extends": [
+      "stylelint-config-standard-scss"
+    ],
+    "rules": {
+      "declaration-empty-line-before": null,
+      "at-rule-no-unknown": null,
+      "scss/no-global-function-names": null,
+      "scss/at-rule-no-unknown": true,
+      "function-url-quotes": null,
+      "indentation": "tab",
+      "number-leading-zero": null,
+      "number-max-precision": [
+        4,
+        {
+          "severity": "warning"
+        }
+      ]
+    }
+  }
