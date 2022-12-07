@@ -1,6 +1,6 @@
 @media screen and (max-width: 767px) {
   .title {
-    margin: 0 15px;
+    margin: 20px 15px;
     font-size: 20px;
     line-height: 140%;
   }
@@ -20,22 +20,6 @@
   }
   .item {
     width: 100% !important;
-  }
-  .result {
-    gap: 19px;
-    padding: 28px 26px 20px;
-    margin-top: 19px;
-    margin-bottom: 17px;
-  }
-  .result img {
-    width: 42px;
-    height: 42px;
-  }
-  .result p {
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 140%;
-    margin: 0;
   }
   .images {
     flex-direction: row !important;
@@ -83,6 +67,22 @@
   .img-ul li::before {
     height: 11px !important;
     width: 10px !important;
+  }
+  .result {
+    gap: 19px;
+    padding: 28px 26px 20px;
+    margin-top: 19px;
+    margin-bottom: 17px;
+  }
+  .result img {
+    width: 42px;
+    height: 42px;
+  }
+  .result p {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 140%;
+    margin: 0;
   }
   .phone {
     font-size: 26px;
