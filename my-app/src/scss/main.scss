@@ -31,6 +31,7 @@ h2 {
 	color: var(--blue);
 	overflow-wrap: break-word;
 	text-transform: uppercase;
+	margin-top: 0;
 }
 
 .form {
@@ -142,15 +143,20 @@ input[type="number"] {
 }
 
 .main-footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 	background-color: var(--sky);
 	border-radius: 16px;
-	margin: 30px 4% 5%;
-	display: flex;
+	margin: 2.8% 4% 5%;
+	padding: 3.8% 3% 3%;
+	gap: 8vw;
 	color: var(--blue);
 
 	a {
 		text-decoration: none;
 		color: var(--blue);
+		font-weight: 500;
 	}
 }
 
@@ -198,6 +204,4 @@ input[type="number"] {
 
 .contacts {
 	text-align: center;
-	margin-top: 40px;
-	margin-left: 5%;
 }

@@ -11,7 +11,7 @@
 	}
 
 	.container {
-		flex-flow: column;
+		flex-direction: column;
 		flex-wrap: wrap;
 		margin: 14px 15px 0;
 		gap: 0 !important;
@@ -26,29 +26,19 @@
 		width: 100% !important;
 	}
 
-	.result {
-		gap: 19px;
-		padding: 28px 26px 20px;
-		margin-top: 19px;
-		margin-bottom: 17px;
-
-		img {
-			width: 42px;
-			height: 42px;
-		}
-
-		p {
-			font-weight: 700;
-			font-size: 14px;
-			line-height: 140%;
-			margin: 0;
-		}
-	}
-
 	// изображение
 
 	.images {
 		flex-direction: row !important;
+	}
+
+	img {
+		max-width: 20vw;
+		width: 48%;
+
+		&:not(:last-child) {
+			margin-right: 2%;
+		}
 	}
 
 	.img1,
@@ -77,14 +67,6 @@
 		gap: 30px;
 		align-items: flex-start;
 
-		img {
-			width: 48%;
-
-			&:not(:last-child) {
-				margin-right: 2%;
-			}
-		}
-
 		li {
 			font-size: 14px;
 			line-height: 18px;
@@ -106,6 +88,25 @@
 		}
 	}
 
+	.result {
+		gap: 19px;
+		padding: 28px 26px 20px;
+		margin-top: 19px;
+		margin-bottom: 17px;
+
+		img {
+			width: 42px;
+			height: 42px;
+		}
+
+		p {
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 140%;
+			margin: 0;
+		}
+	}
+
 	.phone {
 		font-size: 26px;
 		line-height: 30px;
@@ -119,6 +120,10 @@
 	.or {
 		font-size: 12px;
 		line-height: 14px;
+	}
+
+	.main-footer {
+		gap: 0 !important;
 	}
 
 	.footer-text {
@@ -141,7 +146,7 @@
 
 	.contacts {
 		text-align: center;
-		margin-top: 30px;
+		margin: 29px 0 !important;
 	}
 }
 

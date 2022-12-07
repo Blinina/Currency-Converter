@@ -2,13 +2,13 @@ env:
   browser: true
 extends:
   - plugin:react/recommended
-  - airbnb
 overrides: []
 parserOptions:
   ecmaVersion: latest
   sourceType: module
 plugins:
   - react
+  - airbnb
 rules: {
   react/prop-types: 0,
   no-console: 0,

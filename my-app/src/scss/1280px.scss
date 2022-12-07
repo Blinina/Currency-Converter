@@ -13,7 +13,7 @@
 
 	.img-ul-main {
 		box-sizing: border-box;
-		padding: 32.82px 25px 33.54px;
+		padding: 3.2% 2.2% 2.9%;
 		max-height: 375.97px;
 	}
 
@@ -49,8 +49,6 @@
 	img {
 		width: 48%;
 		max-width: 116.51px;
-
-		// gap: 3%;
 	}
 
 	.img2 {
@@ -109,9 +107,11 @@
 		margin: 37px 0 23px;
 	}
 
-	.footer-text {
-		padding: 65px 0 64px 51px;
+	.main-footer {
+		gap: 0 !important;
+	}
 
+	.footer-text {
 		p {
 			font-size: 13px;
 			line-height: 138%;

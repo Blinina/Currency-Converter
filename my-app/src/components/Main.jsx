@@ -1,5 +1,3 @@
-/* eslint-disable import/no-named-as-default */
-/* eslint-disable import/no-named-as-default-member */
 import React from 'react';
 import MainForm from './MainForm.jsx';
 import img1 from '../assets/images/img-1.jpg';

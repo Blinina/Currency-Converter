@@ -26,7 +26,7 @@
 
 	.img-ul-main {
 		box-sizing: border-box;
-		padding: 22.08px 15px 20px;
+		padding: 3.2% 2.2% 2.9%;
 		max-height: 354px;
 	}
 
@@ -37,8 +37,9 @@
 	}
 
 	.img-ul {
-		gap: 7%;
+		justify-content: space-around;
 		align-items: flex-start;
+		gap: 20px;
 
 		li {
 			font-size: 13px;
@@ -87,7 +88,7 @@
 	}
 
 	.phone {
-		font-size: 24px;
+		font-size: 3vw;
 		line-height: 28px;
 	}
 
@@ -102,12 +103,10 @@
 	}
 
 	.footer-text {
-		padding: 65px 0 64px 51px;
-
 		p {
 			font-size: 10px;
 			line-height: 12px;
-			max-width: 467.55px;
+			max-width: 384.84px;
 			max-height: 33.04px;
 			padding-top: 16px;
 		}
