@@ -10,17 +10,15 @@ import Ruble from "./components/Ruble";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Nav />
-        <main>
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/ruble" element={<Ruble />} />
-          </Routes>
-        </main>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Nav />
+      <main>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/ruble" element={<Ruble />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 
